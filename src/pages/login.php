@@ -37,7 +37,7 @@
                         </button>
                         <div class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3" style="gap: 0.5rem">
                             <button class="btn btn-stylehub mb-2 mb-sm-0 me-sm-2 flex-fill">Login</button>
-                            <button class="btn btn-stylehub flex-fill">Sign-up</button>
+                            <button class="btn btn-stylehub flex-fill"onclick="window.location.href='paginainicial.php'>Sign-up</button>
                         </div>
                     </div>
                 </div>
