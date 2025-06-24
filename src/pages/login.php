@@ -37,7 +37,7 @@
                         </button>
                         <div class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3" style="gap: 0.5rem">
                             <button class="btn btn-stylehub mb-2 mb-sm-0 me-sm-2 flex-fill">Login</button>
-                            <button class="btn btn-stylehub flex-fill"onclick="window.location.href='paginainicial.php'>Sign-up</button>
+                            <button class="btn btn-stylehub flex-fill">Sign-up</button>
                         </div>
                     </div>
                 </div>
@@ -47,26 +47,30 @@
 
     <div class="container shadow">
         <main class="w-100 form-container">
-            <form>
-                <img src="./../assets/images/logotipoVertical.png" class="mb-3" height="350" width="350" />
-                <h1 class="h3 fw-normal">Agende seu corte de cria agora mesmo no nosso App!</h1>
-                <h1>Login</h1>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Usuário" required/>
-                    <label for="floatingInput">Usuário</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" required/>
-                    <label for="floatingPassword">Senha</label>
-                </div>
-                <div class="form-check text-start my-3">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Lembrar-me
-                    </label>
-                </div>
-                <button type="button" class="btn btntestcor py-2" onclick="window.location.href='paginainicial.html'">Entrar</button>
-            </form>
+            <form action="processa_login.php" method="POST">
+    <img src="./../assets/images/logotipoVertical.png" class="mb-3" height="350" width="350" />
+    <h1 class="h3 fw-normal">Agende seu corte de cria agora mesmo no nosso App!</h1>
+    <h1>Login</h1>
+
+    <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email" required />
+        <label for="floatingInput">Email</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="senha" placeholder="Senha" required />
+        <label for="floatingPassword">Senha</label>
+    </div>
+
+    <div class="form-check text-start my-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Lembrar-me
+        </label>
+    </div>
+
+    <button type="submit" class="btn btntestcor py-2">Entrar</button>
+</form>
         </main>
     </div>
 

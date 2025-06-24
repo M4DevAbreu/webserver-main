@@ -1,3 +1,9 @@
+<?php session_start();
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+  header("Location: /pages/login.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,55 +20,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <!-- Cabeçalho -->
-     <header id="inicio">
-        <nav class="navbar bg-white navbar-expand-sm">
-          <div class="container">
-            <!-- Logo -->
-            <a href="#" class="navbar-brand">
-              <img
-                src="/assets/images/logotipoHorizontal.png"
-                alt="logotipo"
-                width="160px"
-              />
-            </a>
-            <!-- Botão hamburguer -->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menuNavbar"
-              aria-controls="menuNavbar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Menu colapsável -->
-            <div class="collapse navbar-collapse" id="menuNavbar">
-              <div class="navbar-nav ms-auto text-center text-sm-start">
-                <div class="links">
-                  <a href="/pages/notificacoes.html" class="nav-link active">Notificações</a>
-                  <a href="/pages/seusCortesAgendados.html" class="nav-link">Agendamentos</a>
-                  <a href="/pages/historicoDeCorte.html" class="nav-link">Histórico</a>
-                  <a href="/pages/perfilCliente.html" class="nav-link">Perfil</a>
-                </div>
-                <button id="toggleThemeBtn" class="btn btn-outline-dark ms-3" title="Alternar tema">
-                 <span id="themeIcon">Tema</span>
-                </button>
-                <!-- Botões de login centralizados no mobile -->
-                <div
-                  class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3"
-                  style="gap: 0.5rem"
-                >
-              
-                  <button type="button"class="btn btn-stylehub flex-fill"onclick="window.location.href='login.html'">Sair da Conta</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+   <header id="inicio">
+    <?php
+      include_once("../includes/header.html");
+    ?>
+  </header>
+
 <div class="container shadow">
   <main>
   

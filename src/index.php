@@ -21,51 +21,9 @@
 
   <body>
       <header id="inicio">
-        <nav class="navbar bg-white navbar-expand-sm">
-          <div class="container">
-            <!-- Logo -->
-            <a href="#" class="navbar-brand">
-              <img
-                src="/assets/images/logotipoHorizontal.png"
-                alt="logotipo"
-                width="160px"
-              />
-            </a>
-            <!-- Botão hamburguer -->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menuNavbar"
-              aria-controls="menuNavbar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Menu colapsável -->
-            <div class="collapse navbar-collapse" id="menuNavbar">
-              <div class="navbar-nav ms-auto text-center text-sm-start">
-                <div class="links">
-                  <a href="#inicio" class="nav-link active">Início</a>
-                  <a href="#servicos" class="nav-link">Serviços</a>
-                  <a href="#contatos" class="nav-link">Contatos</a>
-                  <a href="#sobre" class="nav-link">Sobre</a>
-                </div>
-                <button id="toggleThemeBtn" class="btn btn-outline-dark" title="Alternar tema">
-                 <span id="themeIcon">Tema</span>
-                </button>
-                <!-- Botões de login centralizados no mobile -->
-                <div
-                  class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3"
-                  style="gap: 0.5rem">
-                  <button class="btn btn-stylehub mb-2 mb-sm-0 me-sm-2 flex-fill">Login</button>
-                  <button class="btn btn-stylehub flex-fill">Sign-up</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <?php
+          include_once("includes/header.html");
+        ?>
       </header>
     <div class="container shadow" style="--bs-gutter-x: 0">
       
