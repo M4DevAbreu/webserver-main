@@ -22,7 +22,7 @@
   <body>
       <header id="inicio">
         <?php
-          include_once("includes/header.html");
+          include_once("includes/headerindex.html");
         ?>
       </header>
     <div class="container shadow" style="--bs-gutter-x: 0">

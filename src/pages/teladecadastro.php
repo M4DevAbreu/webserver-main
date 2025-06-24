@@ -5,93 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Criar Conta</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="/assets/css/header.css" />
+   <link rel="stylesheet" href="/assets/css/headerindex.css" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
     <link rel="stylesheet" href="/assets/css/cadastro.css" />
      <link rel="stylesheet" href="./../assets/css/tema.css">
 </head>
 <body>
- <header>
-        <nav class="navbar bg-white navbar-expand-sm">
-          <div class="container">
-            <!-- Logo -->
-            <a href="#" class="navbar-brand">
-              <img
-                src="/assets/images/logotipoHorizontal.png"
-                alt="logotipo"
-                width="160px"
-              />
-            </a>
-            <!-- Botão hamburguer -->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menuNavbar"
-              aria-controls="menuNavbar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Menu colapsável -->
-            <div class="collapse navbar-collapse" id="menuNavbar">
-              <div class="navbar-nav ms-auto text-center text-sm-start">
-                <div class="links">
-                  <a href="#" class="nav-link active">Início</a>
-                  <a href="#" class="nav-link">Serviços</a>
-                  <a href="#" class="nav-link">Contatos</a>
-                  <a href="#" class="nav-link">Sobre</a>
-                </div>
-                <button id="toggleThemeBtn" class="btn btn-outline-dark" title="Alternar tema">
-                 <span id="themeIcon">Tema</span>
-                </button>
-                <!-- Botões de login centralizados no mobile -->
-                <div
-                  class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3"
-                  style="gap: 0.5rem"
-                >
-                  <button
-                    class="btn btn-stylehub mb-2 mb-sm-0 me-sm-2 flex-fill"
-                  >
-                    Login
-                  </button>
-                  <button class="btn btn-stylehub flex-fill">Sign-up</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      
+  <header id="inicio">
+    <?php
+      include_once("../includes/headerindex.html");
+    ?>
+  </header>  
   <div class="container shadow">
     <main>
       <div class="container">
         <div class="form-container mx-auto my-5 p-4 shadow-sm rounded bg-white">
           <h2 class="form-title text-center mb-4">Criar uma nova conta</h2>
-          <form>
+          <form action="../pages/processa_cadastro.php" method="POST">
             <div class="row mb-3">
               <div class="col-sm-12 col-md-6 mb-2 mb-md-0">
-                <input type="text" class="form-control" placeholder="Nome">
+                <input type="text" class="form-control" name="nome" placeholder="Nome">
               </div>
               <div class="col-sm-12 col-md-6">
-                <input type="text" class="form-control" placeholder="Sobrenome">
+                <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
               </div>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="CPF">
+              <input type="text" class="form-control" name="cpf" placeholder="CPF">
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" name="email" placeholder="Email">
             </div>
             <div class="mb-3">
-              <input type="tel" class="form-control" placeholder="Telefone">
+              <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Endereço">
+              <input type="text" class="form-control" name="endereco" placeholder="Endereço">
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" placeholder="Senha">
+              <input type="password" class="form-control" name="senha" placeholder="Senha">
             </div>
             <div class="mb-3">
               <label class="form-label d-block">Gênero</label>
@@ -109,10 +61,10 @@
               </div>
             </div>
             <div class="d-grid">
-             <button type="button" class="btn btn-success" onclick="window.location.href='paginainicial.html'">Cadastre-se</button>
+             <button type="submit" class="btn btn-success">Cadastre-se</button>
             </div>
             <div class="mt-3 text-center">
-              <small>Já tem uma conta? <a href="./login.html">Faça login</a></small>
+              <small>Já tem uma conta? <a href="../pages/login.php">Faça login</a></small>
             </div>
           </form>
         </div>

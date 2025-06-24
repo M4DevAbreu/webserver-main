@@ -9,7 +9,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 <head>
      <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StyleHub - Agendamento</title>
+  <title>Home page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./../assets/css/paginainicial.css" />
   <link rel="stylesheet" href="./../assets/css/header.css" />
@@ -24,7 +24,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
     <?php
       include_once("../includes/header.html");
     ?>
-  </header>
+    </header>
 
 <div class="container shadow">
   <main>

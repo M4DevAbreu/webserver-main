@@ -14,40 +14,11 @@
 
 </head>
 <body>
-
-  <header>
-    <nav class="navbar bg-white navbar-expand-sm">
-      <div class="container">
-        <a href="#" class="navbar-brand">
-          <img src="./../assets/images/logotipoHorizontal.png" alt="logotipo" width="160px">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuNavbar">
-          <div class="navbar-nav ms-auto text-center text-sm-start">
-             <div class="links">
-                  <a href="/pages/paginainicial.html" class="nav-link active">Início</a>
-                  <a href="/pages/notificacoes.html" class="nav-link">Notificações</a>
-                  <a href="/pages/historicoDeCorte.html" class="nav-link">histórico</a>
-                  <a href="/pages/seusCortesAgendados.html" class="nav-link">Agendamentos</a>
-              </div>
-          </div>
-        </div>
-        <button id="toggleThemeBtn" class="btn btn-outline-dark ms-3" title="Alternar tema">
-          <span id="themeIcon">Tema</span>
-        </button>
-        <div
-                  class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3"
-                  style="gap: 0.5rem"
-                >
-              
-                  <button type="button"class="btn btn-stylehub flex-fill"onclick="window.location.href='login.html'">Sair da Conta</button>
-        </div>       
-      </div>
-    </nav>      
+  <header id="inicio">
+    <?php
+      include_once("../includes/header.html");
+    ?>
   </header>
-
   <div class="container shadow">
     <main class="container py-4">
     
