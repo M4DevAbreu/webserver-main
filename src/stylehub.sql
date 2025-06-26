@@ -27,16 +27,17 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `agendamentos`
 --
 
-CREATE TABLE `agendamentos` (
-  `id` int NOT NULL,
-  `id_cliente` int NOT NULL,
-  `data` varchar(255) NOT NULL,
-  `hora` time NOT NULL,
-  `servicos` varchar(255) NOT NULL,
-  `valor` decimal(10,2) NOT NULL,
-  `descricao` text,
-  `criado_em` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE agendamentos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  id_cliente INT NOT NULL,
+  data DATE NOT NULL,
+  hora TIME NOT NULL,
+  servicos VARCHAR(255) NOT NULL,
+  descricao TEXT,
+  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  status ENUM('pendente', 'confirmado', 'cancelado') NOT NULL DEFAULT 'pendente',
+  FOREIGN KEY (id_cliente) REFERENCES usuarios(id)
+);
 
 --
 -- Despejando dados para a tabela `agendamentos`
