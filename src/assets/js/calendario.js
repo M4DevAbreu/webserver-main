@@ -60,7 +60,7 @@ function mostrarHorarios() {
   horariosDiv.classList.remove('d-none');
 }
 
-// Função para mostrar modal de erro
+// Modal de erro
 function mostrarErro(msg) {
   const modalErroMsg = document.getElementById('modalErroMensagem');
   modalErroMsg.textContent = msg;
@@ -102,6 +102,7 @@ document.getElementById('agendar-btn').onclick = () => {
   const servicos = Array.from(document.querySelectorAll('.servico-checkbox:checked')).map(cb => cb.value);
   const horario = document.querySelector('.horario-btn.selected-horario');
   const comentario = document.getElementById("comentarios").value;
+  const valor = parseFloat(valorTotalSpan.textContent.replace("R$ ", "").replace(",", "."));
 
   if (!servicos.length) {
     mostrarErro("Selecione pelo menos um serviço.");
@@ -112,14 +113,35 @@ document.getElementById('agendar-btn').onclick = () => {
     return;
   }
 
-  const modalBody = document.getElementById('modal-body-confirmacao');
-  modalBody.innerHTML = `
-    <p><strong>Data:</strong> ${dataSpan.textContent}</p>
-    <p><strong>Horário:</strong> ${horario.textContent}</p>
-    <p><strong>Serviços:</strong> ${servicos.join(', ')}</p>
-    <p><strong>Valor Total:</strong> ${valorTotalSpan.textContent}</p>
-    <p><strong>Comentários:</strong> ${comentario || 'Nenhum'}</p>
-  `;
-
-  new bootstrap.Modal(document.getElementById('modalConfirmacao')).show();
+  fetch('/pages/agendar.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      data: dataSpan.textContent,
+      horario: horario.textContent,
+      servicos,
+      valor,
+      comentario
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      const modalBody = document.getElementById('modal-body-confirmacao');
+      modalBody.innerHTML = `
+        <p><strong>Data:</strong> ${dataSpan.textContent}</p>
+        <p><strong>Horário:</strong> ${horario.textContent}</p>
+        <p><strong>Serviços:</strong> ${servicos.join(', ')}</p>
+        <p><strong>Valor Total:</strong> R$ ${valor.toFixed(2).replace(".", ",")}</p>
+        <p><strong>Comentários:</strong> ${comentario || 'Nenhum'}</p>
+      `;
+      new bootstrap.Modal(document.getElementById('modalConfirmacao')).show();
+    } else {
+      mostrarErro(data.message || "Erro ao salvar agendamento.");
+    }
+  })
+  .catch(error => {
+    console.error("Erro:", error);
+    mostrarErro("Erro ao se comunicar com o servidor.");
+  });
 };
