@@ -1,20 +1,15 @@
-<?php session_start();
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-  header("Location: /pages/login.php");
-  exit;
-}
-?>
+<?php require_once("../includes/autenticacao.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./../assets/css/paginainicial.css" />
-  <link rel="stylesheet" href="./../assets/css/header.css" />
-  <link rel="stylesheet" href="./../assets/css/footer.css" />
-   <link rel="stylesheet" href="./../assets/css/tema.css">
+  <link rel="stylesheet" href="./../assets/css/paginainicial.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="./../assets/css/footer.css">
+  <link rel="stylesheet" href="./../assets/css/tema.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
@@ -30,7 +25,7 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
   <main>
   
       <!-- Saudação -->
-      <p id="saudacao" class="texto-tema-adaptavel text-center mt-3">Tudo beleza, Pedro!</p>
+      <p id="saudacao" class="texto-tema-adaptavel text-center mt-3">Tudo beleza, <?= htmlspecialchars($user_logado->nome) ?></p>
   
       <!-- Calendário e Horários -->
       <div class="container py-4 d-flex flex-column flex-md-row justify-content-between">

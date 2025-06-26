@@ -1,3 +1,5 @@
+<?php require_once("../includes/autenticacao.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="dark">
 <head>

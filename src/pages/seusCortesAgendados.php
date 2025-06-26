@@ -1,3 +1,5 @@
+<?php require_once("../includes/autenGestor.php");?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,14 +9,14 @@
   <link rel="stylesheet" href="./../assets/css/cortesAgendados.css">
   <link rel="stylesheet" href="./../assets/css/footer.css">
   <link rel="stylesheet" href="./../assets/css/header.css">
-   <link rel="stylesheet" href="./../assets/css/tema.css">
+  <link rel="stylesheet" href="./../assets/css/tema.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   <title>Seus Cortes Agendados</title>
 </head>
 <body>
     <header id="inicio">
     <?php
-      include_once("../includes/header.html");
+      include_once("../includes/headerbarbeiro.html");
     ?>
     </header>
   <div class="container shadow">

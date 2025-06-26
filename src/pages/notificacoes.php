@@ -1,3 +1,4 @@
+<?php require_once("../includes/autenticacao.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,7 +15,7 @@
 <body>
     <header id="inicio">
     <?php
-      include_once("../includes/header.html");
+    include_once("../includes/header.html");
     ?>
     </header>
 <div class="container shadow">

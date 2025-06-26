@@ -1,68 +1,26 @@
+<?php ob_start(); require_once("../includes/autenticacao.php"); ?>
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/assets/css/historicoDeCorte.css">
+      <link rel="stylesheet" href="/assets/css/footer.css">
+      <link rel="stylesheet" href="/assets/css/header.css">
+      <link rel="stylesheet" href="/assets/css/tema.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="./../assets/css/historicoDeCorte.css">
-      <link rel="stylesheet" href="./../assets/css/footer.css">
-      <link rel="stylesheet" href="./../assets/css/header.css">
-      <link rel="stylesheet" href="./../assets/css/tema.css">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
       <title>Histórico de Corte</title>
 
     </head>
 
-    <body>
-         <header>
-        <nav class="navbar bg-white navbar-expand-sm">
-          <div class="container">
-            <!-- Logo -->
-            <a href="#" class="navbar-brand">
-              <img
-                src="/assets/images/logotipoHorizontal.png"
-                alt="logotipo"
-                width="160px"
-              />
-            </a>
-            <!-- Botão hamburguer -->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menuNavbar"
-              aria-controls="menuNavbar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Menu colapsável -->
-            <div class="collapse navbar-collapse" id="menuNavbar">
-              <div class="navbar-nav ms-auto text-center text-sm-start">
-                <div class="links">
-                  <a href="/pages/paginainicial.html" class="nav-link active">Início</a>
-                  <a href="/pages/notificacoes.html" class="nav-link">Notificações</a>
-                  <a href="#" class="nav-link">Privacidade</a>
-                  <a href="/pages/perfilCliente.html" class="nav-link">Perfil</a>
-                </div>
-                <button id="toggleThemeBtn" class="btn btn-outline-dark ms-3" title="Alternar tema">
-                 <span id="themeIcon">Tema</span>
-                </button>
-                <!-- Botões de login centralizados no mobile -->
-                <div
-                  class="mt-3 mt-sm-0 d-flex flex-column flex-sm-row align-items-center justify-content-center ms-sm-3"
-                  style="gap: 0.5rem"
-                >
-              
-                  <button type="button"class="btn btn-stylehub flex-fill"onclick="window.location.href='login.html'">Sair da Conta</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+  <body>
+      <header id="inicio">
+        <?php
+          include_once("../includes/header.html");
+        ?>
       </header>
-      <div class="container">
+    <div class="container">
       <main class="container py-4">
         <h2 class="mb-3">Seu Histórico de Cortes</h2>
 
@@ -222,8 +180,8 @@
         </footer>
       </div>
     
-     <script src="./../assets/js/mododark.js"></script>
-    </body>
+     <script src="/assets/js/mododark.js"></script>
+  </body>
 
     </html>
 
