@@ -1,9 +1,19 @@
-<?php require_once("../includes/autenGestor.php"); ?>
-<?php
-  require_once("../config/conexao.php");
-  $sql = $pdo->prepare("SELECT * FROM estoque ORDER BY nome ASC");
-  $sql->execute();
-  $itens = $sql->fetchAll(PDO::FETCH_ASSOC);
+<?php 
+require_once("../includes/autenGestor.php"); 
+require_once("../config/conexao.php"); 
+
+if (isset($_GET['excluir'])) {
+  $idExcluir = (int) $_GET['excluir'];
+  $del = $pdo->prepare("DELETE FROM estoque WHERE id = :id");
+  $del->bindValue(":id", $idExcluir);
+  $del->execute();
+  header("Location: pagPrincipalBarbeiro.php");
+  exit;
+}
+
+$sql = $pdo->prepare("SELECT * FROM estoque ORDER BY nome ASC");
+$sql->execute();
+$itens = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -160,9 +170,9 @@
                   <a href="editar_item.php?id=<?= $item['id'] ?>" class="btn btn-sm btn-success me-1">
                     <i class="bi bi-pencil-square fs-5"></i>
                   </a>
-                  <a href="excluir_item.php?id=<?= $item['id'] ?>" class="btn btn-sm btn-danger ms-1" onclick="return confirm('Deseja realmente excluir este item?')">
-                    <i class="bi bi-trash fs-5"></i>
-                  </a>
+                  <a href="?excluir=<?= $item['id'] ?>" class="btn btn-sm btn-danger ms-1" onclick="return confirm('Excluir esse item?')" title="Excluir">
+                      <i class="bi bi-trash fs-5"></i>
+                    </a>
                 </div>
               </div>
             </div>
