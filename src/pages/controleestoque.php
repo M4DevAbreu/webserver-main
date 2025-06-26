@@ -9,18 +9,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./../assets/css/controleestoque.css"/>
   <link rel="stylesheet" href="./../assets/css/footer.css"/>
-  <link rel="stylesheet" href="./../assets/css/headerbarbeiro.css"/>
+  <link rel="stylesheet" href="/assets/css/headerbarbeiro.css"/>
    <link rel="stylesheet" href="./../assets/css/tema.css">
 </head>
 
 <body>
-
- <div class="container">
   <header id="inicio">
     <?php
       include_once("../includes/headerbarbeiro.html");
     ?>
     </header>
+ <div class="container">
  <div class="container shadow">
    
     <main class="container py-4">
@@ -178,9 +177,11 @@
    
       </div>
     </main>
- </div>
+      </div>
 
-        <footer class="footer mt-auto py-3">
+  </div>
+
+  <footer class="footer mt-auto py-3">
           <div class="container text-center">
             <ul class="lista d-flex justify-content-center flex-wrap gap-3 mb-3">
               <li><a href="#" class=" px-2 links">Início</a></li>
@@ -192,7 +193,6 @@
             <p class="mb-0">&copy; 2025 StyleHub, Inc</p>
           </div>
         </footer>
-      </div>
   
   <script src="./../assets/js/mododark.js"></script>
   <script src="./../assets/js/script.js"></script>

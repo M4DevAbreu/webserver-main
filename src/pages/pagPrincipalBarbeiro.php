@@ -215,7 +215,10 @@
         </div>
       </main>
 
-      <div>
+
+    </div>
+
+    <div>
         <footer class="footer mt-auto py-3">
           <div class="container text-center">
             <ul class="lista d-flex justify-content-center flex-wrap gap-3 mb-3">
@@ -229,8 +232,6 @@
           </div>
         </footer>
       </div>
-
-    </div>
 
     <script src="./../assets/js/mododark.js"></script>
     <script src="./../assets/js/script.js"></script>

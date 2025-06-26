@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./../assets/css/cortesAgendados.css">
   <link rel="stylesheet" href="./../assets/css/footer.css">
-  <link rel="stylesheet" href="./../assets/css/header.css">
+  <link rel="stylesheet" href="./../assets/css/headerbarbeiro.css">
   <link rel="stylesheet" href="./../assets/css/tema.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   <title>Seus Cortes Agendados</title>
