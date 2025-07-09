@@ -468,17 +468,10 @@
         </main>
     </div>
       <div>
-        <footer class="footer mt-auto py-3">
-          <div class="container text-center">
-            <ul class="lista d-flex justify-content-center flex-wrap gap-3 mb-3">
-              <li><a href="#inicio" class=" px-2 links">Início</a></li>
-              <li><a href="#servicos" class=" px-2 links">Serviços</a></li>
-              <li><a href="#contatos" class=" px-2 links">Contatos</a></li>
-              <li><a href="#sobre" class=" px-2 links">Sobre</a></li>
-            </ul>
-            <div class="footer-divider"></div>
-            <p class="mb-0">&copy; 2025 StyleHub, Inc</p>
-          </div>
+        <footer id="final">
+          <?php
+            include_once __DIR__ . '/includes/footer.html';
+          ?>
         </footer>
       </div>
     
